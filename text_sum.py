@@ -51,16 +51,3 @@ def extractive_summarization(text, num_sentences=3):
     summary = ' '.join([sentences[i] for i in sorted(top_sentence_indices)])
     
     return summary
-
-def abstractive_summarization(text, num_sentences=3):
-    # For abstractive summarization, we can use advanced deep learning models like GPT
-    # This requires a pre-trained model and is beyond the scope of this example
-    pass
-
-def hybrid_summarization(text, num_sentences=3):
-    # Extractive Summarization
-    summary = extractive_summarization(text, num_sentences)
-    
-    # Abstractive Summarization
-    # For now, we'll just return the extractive summary as the hybrid summary
-    return summary

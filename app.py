@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template, send_from_directory
-from text_sum import hybrid_summarization
+from text_sum import extractive_summarization
 from gtts import gTTS
 import os
 
@@ -19,7 +19,7 @@ def handle_summarization_request():
     text = request_data['text']
     num_sentences = int(request_data.get('num_sentences', 3))
 
-    summary = hybrid_summarization(text, num_sentences)
+    summary = extractive_summarization(text, num_sentences)
 
     static_dir = 'static'
     if not os.path.exists(static_dir):
